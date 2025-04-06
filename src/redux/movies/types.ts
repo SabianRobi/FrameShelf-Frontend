@@ -4,7 +4,6 @@ import { PaginableRequest, PaginableResponse, Request } from "../types.ts";
 //   Models
 // ###########
 
-// TODO?: Should store the poster path also?
 export type Movie = {
   id: number;
   title: string;
@@ -24,7 +23,7 @@ export type CastMember = {
   id: number;
   name: string;
   originalName: string;
-  profilePath?: string;
+  profilePath: string | null;
   character: string;
 };
 
