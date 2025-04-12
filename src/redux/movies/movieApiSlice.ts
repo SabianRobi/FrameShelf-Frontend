@@ -23,9 +23,17 @@ export const movieApi = restApi.injectEndpoints({
         params,
       }),
       transformResponse: (response: GetMoviesResponse) => response.content,
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: "Movies" as const, id })),
+              { type: "Movies", id: "LIST" },
+            ]
+          : [{ type: "Movies", id: "LIST" }],
     }),
     getMovieById: build.query<GetMovieByIdResponse, GetMovieByIdRequest>({
       query: ({ id }) => `/movies/${id}`,
+      providesTags: (_result, _error, { id }) => [{ type: "Movies", id }],
     }),
     getMovieCastByMovieId: build.query<
       GetMovieCastByMovieIdResponse,
@@ -45,12 +53,20 @@ export const movieApi = restApi.injectEndpoints({
         method: "POST",
         body,
       }),
+      invalidatesTags: [{ type: "Movies", id: "LIST" }],
     }),
     deleteMovie: build.mutation<DeleteMovieResponse, DeleteMovieRequest>({
       query: ({ id }) => ({
         url: `/movies/${id}`,
         method: "DELETE",
       }),
+      invalidatesTags: (_result, _error, { id }) => [{ type: "Movies", id }],
     }),
   }),
 });
+
+export const {
+  useGetMoviesQuery,
+  useLazySearchMoviesQuery,
+  useCreateMovieMutation,
+} = movieApi;

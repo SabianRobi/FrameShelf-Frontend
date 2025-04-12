@@ -14,9 +14,20 @@ export type Movie = {
   status: string;
   voteAverage: number;
   voteCount: number;
-  genres: Set<string>;
-  homepage?: string;
-  overview?: string;
+  genres: Array<string>;
+  homepage: string | null;
+  overview: string | null;
+  posterPath: string | null;
+  backdropPath: string | null;
+  watchedAt: string | null;
+  watchedLanguage: string | null;
+};
+
+export type MovieSearchResult = Pick<
+  Movie,
+  "id" | "title" | "releaseDate" | "originalTitle"
+> & {
+  posterPath?: string;
 };
 
 export type CastMember = {
@@ -37,7 +48,10 @@ export type GetMovieCastByMovieIdRequest = Pick<Movie, "id">;
 export type SearchMoviesRequest = Pick<PaginableRequest, "page"> & {
   query: Movie["title"];
 };
-export type CreateMovieRequest = Pick<Movie, "id">;
+export type CreateMovieRequest = Pick<
+  Movie,
+  "id" | "watchedAt" | "watchedLanguage"
+>;
 export type DeleteMovieRequest = Pick<Movie, "id">;
 
 // ###########
@@ -47,10 +61,6 @@ export type DeleteMovieRequest = Pick<Movie, "id">;
 export type GetMoviesResponse = PaginableResponse<Movie>;
 export type GetMovieByIdResponse = Movie;
 export type GetMovieCastByMovieIdResponse = CastMember[];
-export type SearchMoviesResponse = PaginableResponse<
-  Pick<Movie, "id" | "title" | "releaseDate" | "originalTitle"> & {
-    posterPath?: string;
-  }
->;
+export type SearchMoviesResponse = PaginableResponse<MovieSearchResult>;
 export type CreateMovieResponse = Movie;
 export type DeleteMovieResponse = void;

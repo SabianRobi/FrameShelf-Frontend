@@ -8,4 +8,5 @@ export const restApi = createApi({
     baseUrl: BASE_URL,
   }),
   endpoints: () => ({}),
+  tagTypes: ["Movies"],
 });
