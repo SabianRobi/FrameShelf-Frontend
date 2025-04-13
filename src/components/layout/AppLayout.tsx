@@ -5,7 +5,7 @@ export const AppLayout = () => {
   return (
     <div className="bg-[#2D3250] min-h-screen text-white">
       <TopNavigationBar />
-      <div className="p-2">
+      <div className="p-2 pt-8">
         <Outlet />
       </div>
     </div>

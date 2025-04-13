@@ -68,6 +68,7 @@ export const movieApi = restApi.injectEndpoints({
 export const {
   useGetMoviesQuery,
   useLazyGetMoviesQuery,
+  useGetMovieByIdQuery,
   useLazySearchMoviesQuery,
   useCreateMovieMutation,
 } = movieApi;

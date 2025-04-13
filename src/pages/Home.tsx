@@ -28,7 +28,7 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className="pt-8">
+    <>
       <div className="flex flex-col justify-center items-center gap-2">
         {/* Add movie button */}
         <button
@@ -56,6 +56,6 @@ export const Home = () => {
             .map((movie) => <MovieCard movie={movie} key={movie.id} />)}
         </div>
       </div>
-    </div>
+    </>
   );
 };
