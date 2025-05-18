@@ -6,6 +6,8 @@ import { Bounce, ToastContainer } from "react-toastify";
 import { AppLayout } from "./components/layout/AppLayout.tsx";
 import "./main.css";
 import { ActorDetails } from "./pages/ActorDetails.tsx";
+import { Callback } from "./pages/auth/Callback.tsx";
+import { Login } from "./pages/auth/Login.tsx";
 import { Home } from "./pages/Home.tsx";
 import { LikedActors } from "./pages/LikedActors.tsx";
 import { LikedMovies } from "./pages/LikedMovies.tsx";
@@ -31,6 +33,13 @@ createRoot(document.getElementById("root")!).render(
               </Route>
               <Route path="movie/:movieId" element={<MovieDetails />} />
               <Route path="actor/:actorId" element={<ActorDetails />} />
+              <Route path="auth">
+                <Route path="login" element={<Login />} />
+                <Route
+                  path="login/oauth2/callback/google"
+                  element={<Callback />}
+                />
+              </Route>
             </Route>
           </Routes>
         </BrowserRouter>

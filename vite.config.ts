@@ -9,6 +9,7 @@ import "react-dom";
 export default defineConfig({
   server: {
     port: 3000,
+    allowedHosts: ["frameshelf.local"],
   },
   plugins: [react(), deno(), tailwindcss()],
   optimizeDeps: {
