@@ -21,6 +21,7 @@
     "react-select": "npm:react-select@^5.10.2",
     "react-select-async-paginate": "npm:react-select-async-paginate@^0.7.11",
     "react-toastify": "npm:react-toastify@^11.1.0",
+    "standard-version": "npm:standard-version@^9.5.0",
     "tailwindcss": "npm:tailwindcss@^4.3.0",
     "vite": "npm:vite@^8.0.12"
   },
