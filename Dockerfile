@@ -1,9 +1,10 @@
-FROM denoland/deno:alpine AS build
+FROM node:22 AS build
 
 WORKDIR /app
 
 COPY . .
 
+RUN npm install -g deno
 RUN deno task build
 
 FROM nginx:alpine
