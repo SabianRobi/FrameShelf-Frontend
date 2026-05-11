@@ -25,7 +25,12 @@ jobs:
         with:
           node-version: 22
 
-      - run: deno install
+      - name: Install Deno
+        run: |
+          npm install -g deno
+      
+      - name: Install dependencies
+        run: deno install
 
       - name: Configure Git
         run: |
