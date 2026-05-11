@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.3...v0.0.4) (2026-05-11)
+
+
+### Bug Fixes
+
+* **ci:** Fixed Dockerfile ([32c102a](https://github.com/SabianRobi/FrameShelf-Frontend/commit/32c102aa196754015259ef8318ca1fd8be15861b))
+
 ### [0.0.3](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.2...v0.0.3) (2026-05-11)
 
 ### 0.0.2 (2026-05-11)
