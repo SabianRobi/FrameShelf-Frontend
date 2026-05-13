@@ -2,11 +2,6 @@
   "version": "5",
   "specifiers": {
     "npm:@deno/vite-plugin@^2.0.2": "2.0.2_vite@8.0.12",
-    "npm:@fortawesome/fontawesome-svg-core@^7.2.0": "7.2.0",
-    "npm:@fortawesome/free-brands-svg-icons@^7.2.0": "7.2.0",
-    "npm:@fortawesome/free-regular-svg-icons@^7.2.0": "7.2.0",
-    "npm:@fortawesome/free-solid-svg-icons@^7.2.0": "7.2.0",
-    "npm:@fortawesome/react-fontawesome@^3.3.1": "3.3.1_@fortawesome+fontawesome-svg-core@7.2.0_react@19.2.6",
     "npm:@popperjs/core@^2.11.8": "2.11.8",
     "npm:@reduxjs/toolkit@^2.11.2": "2.11.2_react@19.2.6_react-redux@9.2.0__@types+react@19.2.14__react@19.2.6__redux@5.0.1_@types+react@19.2.14",
     "npm:@tailwindcss/vite@^4.3.0": "4.3.0_vite@8.0.12",
@@ -216,40 +211,6 @@
     },
     "@floating-ui/utils@0.2.11": {
       "integrity": "sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg=="
-    },
-    "@fortawesome/fontawesome-common-types@7.2.0": {
-      "integrity": "sha512-IpR0bER9FY25p+e7BmFH25MZKEwFHTfRAfhOyJubgiDnoJNsSvJ7nigLraHtp4VOG/cy8D7uiV0dLkHOne5Fhw=="
-    },
-    "@fortawesome/fontawesome-svg-core@7.2.0": {
-      "integrity": "sha512-6639htZMjEkwskf3J+e6/iar+4cTNM9qhoWuRfj9F3eJD6r7iCzV1SWnQr2Mdv0QT0suuqU8BoJCZUyCtP9R4Q==",
-      "dependencies": [
-        "@fortawesome/fontawesome-common-types"
-      ]
-    },
-    "@fortawesome/free-brands-svg-icons@7.2.0": {
-      "integrity": "sha512-VNG8xqOip1JuJcC3zsVsKRQ60oXG9+oYNDCosjoU/H9pgYmLTEwWw8pE0jhPz/JWdHeUuK6+NQ3qsM4gIbdbYQ==",
-      "dependencies": [
-        "@fortawesome/fontawesome-common-types"
-      ]
-    },
-    "@fortawesome/free-regular-svg-icons@7.2.0": {
-      "integrity": "sha512-iycmlN51EULlQ4D/UU9WZnHiN0CvjJ2TuuCrAh+1MVdzD+4ViKYH2deNAll4XAAYlZa8WAefHR5taSK8hYmSMw==",
-      "dependencies": [
-        "@fortawesome/fontawesome-common-types"
-      ]
-    },
-    "@fortawesome/free-solid-svg-icons@7.2.0": {
-      "integrity": "sha512-YTVITFGN0/24PxzXrwqCgnyd7njDuzp5ZvaCx5nq/jg55kUYd94Nj8UTchBdBofi/L0nwRfjGOg0E41d2u9T1w==",
-      "dependencies": [
-        "@fortawesome/fontawesome-common-types"
-      ]
-    },
-    "@fortawesome/react-fontawesome@3.3.1_@fortawesome+fontawesome-svg-core@7.2.0_react@19.2.6": {
-      "integrity": "sha512-wGnAPhfzivDwBWYmEG8MSrEXPruoiMMo48NnsRkj1NZkoaawgOijPNAiSHKMYEoCsqTBSgLTzL6EqTTWGaUR4w==",
-      "dependencies": [
-        "@fortawesome/fontawesome-svg-core",
-        "react"
-      ]
     },
     "@hutson/parse-repository-url@3.0.2": {
       "integrity": "sha512-H9XAx3hc0BQHY6l+IFSWHDySypcXsvsuLhgYLUGywmJ5pswRVQJUHpOsobnLYp2ZUaUlKiKDrgWWhosOwAEM8Q=="
@@ -2015,11 +1976,6 @@
   "workspace": {
     "dependencies": [
       "npm:@deno/vite-plugin@^2.0.2",
-      "npm:@fortawesome/fontawesome-svg-core@^7.2.0",
-      "npm:@fortawesome/free-brands-svg-icons@^7.2.0",
-      "npm:@fortawesome/free-regular-svg-icons@^7.2.0",
-      "npm:@fortawesome/free-solid-svg-icons@^7.2.0",
-      "npm:@fortawesome/react-fontawesome@^3.3.1",
       "npm:@reduxjs/toolkit@^2.11.2",
       "npm:@tailwindcss/vite@^4.3.0",
       "npm:@types/react@^19.2.14",
