@@ -5,6 +5,7 @@ import { defineConfig } from "vite";
 
 import "react";
 import "react-dom";
+import path from "node:path";
 
 export default defineConfig({
   server: {
@@ -14,4 +15,9 @@ export default defineConfig({
   optimizeDeps: {
     include: ["react/jsx-runtime"],
   },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  }
 });

@@ -2,18 +2,18 @@ import { Dispatch, SetStateAction } from "react";
 import { Controller, useForm } from "react-hook-form";
 import Select, { GroupBase } from "react-select";
 import { toast } from "react-toastify";
-import languages from "../../assets/languages.json" with { type: "json" };
-import { Button } from "../../components/Button.tsx";
-import SearchSelect from "../../components/search-select/SearchSelect.tsx";
+import languages from "@/assets/languages.json" with { type: "json" };
+import { Button } from "@/components/Button.tsx";
+import SearchSelect from "@/components/search-select/SearchSelect.tsx";
 import {
   useCreateMovieMutation,
   useLazySearchMoviesQuery,
-} from "../../redux/movies/movieApiSlice.ts";
+} from "@/redux/movies/movieApiSlice.ts";
 import {
   CreateMovieRequest,
   MovieSearchResult,
   SearchMoviesResponse,
-} from "../../redux/movies/types.ts";
+} from "@/redux/movies/types.ts";
 
 type LikeMovieModalContentProps = {
   setShowModal: Dispatch<SetStateAction<boolean>>;
@@ -116,8 +116,7 @@ export const LikeMovieModalContent = ({
               onChange={(option) => field.onChange(option)}
               classNames={{
                 container: () =>
-                  `rounded-md border ${
-                    errors.movie ? "border-red-500" : "border-gray-300"
+                  `rounded-md border ${errors.movie ? "border-red-500" : "border-gray-300"
                   }`,
               }}
             />
@@ -140,10 +139,9 @@ export const LikeMovieModalContent = ({
               defaultValue={{ value: "hu", label: "Hungarian" }}
               classNames={{
                 container: () =>
-                  `rounded-md border ${
-                    errors.watchedLanguage
-                      ? "border-red-500"
-                      : "border-gray-300"
+                  `rounded-md border ${errors.watchedLanguage
+                    ? "border-red-500"
+                    : "border-gray-300"
                   }`,
               }}
             />
@@ -162,9 +160,8 @@ export const LikeMovieModalContent = ({
           {...register("watchedAt", {
             required: "Required",
           })}
-          className={`w-full p-2 rounded-md border ${
-            errors.watchedAt ? "border-red-500" : "border-gray-300"
-          }`}
+          className={`w-full p-2 rounded-md border ${errors.watchedAt ? "border-red-500" : "border-gray-300"
+            }`}
         />
         {errors.watchedAt && (
           <p className="text-red-500">{errors.watchedAt.message}</p>

@@ -1,4 +1,4 @@
-import { restApi } from "../restApi.ts";
+import { restApi } from "@/redux/restApi.ts";
 import {
   Actor,
   CreateActorRequest,

@@ -1,6 +1,6 @@
 import prettyMilliseconds from "pretty-ms";
 import { Link } from "react-router-dom";
-import { Movie } from "../redux/movies/types.ts";
+import { Movie } from "@/redux/movies/types.ts";
 
 type MovieCardProps = {
   movie: Movie;
@@ -24,11 +24,10 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
             {/* TODO: Replace with production countries */}
             <div className="flex items-center gap-1">
               <img
-                src={`https://flagcdn.com/w20/${
-                  movie.originalLanguage === "en"
+                src={`https://flagcdn.com/w20/${movie.originalLanguage === "en"
                     ? "us"
                     : movie.originalLanguage
-                }.png`}
+                  }.png`}
                 alt="Country flag"
                 className="h-4"
               />
@@ -45,7 +44,7 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
 
           <div>{movie.genres.join(", ")}</div>
           <div className="text-sm text-end justify-between w-full flex">
-            <p>{}</p>
+            <p>{ }</p>
             <p className="opacity-40">
               {prettyMilliseconds(movie.runtime * 60 * 1000)}
             </p>

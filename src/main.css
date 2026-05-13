@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #F6BD60;
+  --color-secondary: #EFD09E;
+  --color-accent: #F15946;
+
+  --color-background: #1B2021;
+  --color-surface: #000F08;
+  --color-foreground: #F9FAFB;
+}
+
+body {
+  color: var(--color-foreground);
+}
+
+a {
+  @apply hover:underline;
+  @apply hover:text-primary;
+  @apply transition-colors;
+}
