@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Modal } from "../components/Modal.tsx";
-import { MovieCard } from "../components/MovieCard.tsx";
-import { useGetMoviesQuery } from "../redux/movies/movieApiSlice.ts";
+import { Modal } from "@/components/Modal.tsx";
+import { MovieCard } from "@/components/MovieCard.tsx";
+import { useGetMoviesQuery } from "@/redux/movies/movieApiSlice.ts";
 import { LikeMovieModalContent } from "./home/LikeMovieModalContent.tsx";
 
 export const Home = () => {

@@ -1,7 +1,7 @@
 import prettyMilliseconds from "pretty-ms";
 import { useParams } from "react-router-dom";
-import { MovieDetailCard } from "../components/MovieDetailCard.tsx";
-import { useGetMovieByIdQuery } from "../redux/movies/movieApiSlice.ts";
+import { MovieDetailCard } from "@/components/MovieDetailCard.tsx";
+import { useGetMovieByIdQuery } from "@/redux/movies/movieApiSlice.ts";
 
 export const MovieDetails = () => {
   const { movieId } = useParams<{ movieId: string }>();
