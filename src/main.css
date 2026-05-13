@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  @apply underline;
+  @apply hover:underline;
   @apply hover:text-primary;
   @apply transition-colors;
 }

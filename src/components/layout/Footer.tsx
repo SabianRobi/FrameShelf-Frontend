@@ -5,7 +5,7 @@ export const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <div className="bg-surface py-4">
+        <div className="bg-surface p-2 py-4">
             <Container>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-foreground/60">
                     <p className="text-sm text-center">
@@ -15,9 +15,7 @@ export const Footer = () => {
                     </p>
 
                     <a href="https://github.com/SabianRobi/FrameShelf-Frontend" target="_blank" className="text-xl">
-                        <p>
-                            <FaGithub />
-                        </p>
+                        <FaGithub />
                     </a>
                 </div>
             </Container>
