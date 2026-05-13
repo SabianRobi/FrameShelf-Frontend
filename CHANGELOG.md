@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.6...v0.0.7) (2026-05-13)
+
+
+### Features
+
+* Added footer ([28032ae](https://github.com/SabianRobi/FrameShelf-Frontend/commit/28032aece55ec8f9e4794e56442f8e0ffd50849b))
+* Reworked navbar ([832b4b9](https://github.com/SabianRobi/FrameShelf-Frontend/commit/832b4b9659d748ae78564007e7c8d93121cffd5a))
+* Set up global styles and fontawesome icons ([9397534](https://github.com/SabianRobi/FrameShelf-Frontend/commit/9397534fd9bd8c461874ff1bcd49eb18c9ed37a8))
+
 ### [0.0.6](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.5...v0.0.6) (2026-05-12)
 
 ### [0.0.5](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.4...v0.0.5) (2026-05-12)
