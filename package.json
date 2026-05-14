@@ -1,0 +1,9 @@
+{
+  "name": "frameshelf-frontend",
+  "version": "0.0.7",
+  "private": true,
+  "scripts": {
+    "release": "standard-version",
+    "release:first": "standard-version --first-release"
+  }
+}

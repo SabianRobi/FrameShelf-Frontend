@@ -1,13 +1,18 @@
 import { Outlet } from "react-router-dom";
-import { TopNavigationBar } from "./TopNavigationBar.tsx";
+import { TopNavigationBar } from "@/components/layout/TopNavBar/TopNavigationBar.tsx";
+import { Footer } from "./Footer.tsx";
+import { Container } from "./Container.tsx";
 
 export const AppLayout = () => {
   return (
-    <div className="bg-[#2D3250] min-h-screen text-white">
+    <div className="bg-background min-h-screen flex flex-col">
       <TopNavigationBar />
-      <div className="p-2 pt-8">
-        <Outlet />
+      <div className="grow p-2">
+        <Container>
+          <Outlet />
+        </Container>
       </div>
+      <Footer />
     </div>
   );
 };

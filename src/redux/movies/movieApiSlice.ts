@@ -1,4 +1,4 @@
-import { restApi } from "../restApi.ts";
+import { restApi } from "@/redux/restApi.ts";
 import {
   CreateMovieRequest,
   CreateMovieResponse,
@@ -26,9 +26,9 @@ export const movieApi = restApi.injectEndpoints({
       providesTags: (result) =>
         result
           ? [
-              ...result.map(({ id }) => ({ type: "Movies" as const, id })),
-              { type: "Movies", id: "LIST" },
-            ]
+            ...result.map(({ id }) => ({ type: "Movies" as const, id })),
+            { type: "Movies", id: "LIST" },
+          ]
           : [{ type: "Movies", id: "LIST" }],
     }),
     getMovieById: build.query<GetMovieByIdResponse, GetMovieByIdRequest>({

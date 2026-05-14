@@ -1,4 +1,4 @@
-import { PaginableRequest, PaginableResponse, Request } from "../types.ts";
+import { PaginableRequest, PaginableResponse, Request } from "@/redux/types.ts";
 
 // ###########
 //   Models
