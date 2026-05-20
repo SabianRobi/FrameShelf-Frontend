@@ -1,23 +1,23 @@
 import { restApi } from "../restApi.ts";
 import {
-  GetLoginUrlRequest,
-  GetLoginUrlResponse,
-  LoginRequest,
-  LoginResponse,
+  UserResponse,
 } from "./types.ts";
 
 export const userApiSlice = restApi.injectEndpoints({
   endpoints: (builder) => ({
-    getLoginUrl: builder.query<GetLoginUrlResponse, GetLoginUrlRequest>({
-      query: () => "/auth/login/oauth2/authorize/google",
+    me: builder.query<UserResponse, void>({
+      query: () => ({
+        url: "/user/me"
+      }),
     }),
-    login: builder.query<LoginResponse, LoginRequest>({
-      query: (params) => ({
-        url: "/auth/login/oauth2/callback/google",
-        params,
+
+    logout: builder.mutation<void, void>({
+      query: () => ({
+        url: "/auth/logout",
+        method: "POST",
       }),
     }),
   }),
 });
 
-export const { useLazyGetLoginUrlQuery, useLazyLoginQuery } = userApiSlice;
+export const { useLogoutMutation, useMeQuery, useLazyMeQuery } = userApiSlice;

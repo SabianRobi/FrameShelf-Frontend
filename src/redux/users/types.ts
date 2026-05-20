@@ -4,26 +4,19 @@
 
 export type User = {
   id: string;
+  username: string;
+  displayName: string;
+  profilePicture: string;
+  createdAt: string;
+  lastLoginAt: string;
 };
 
 // ###########
 //   Requests
 // ###########
 
-export type GetLoginUrlRequest = void;
-export type LoginRequest = {
-  code: string;
-  state: string;
-  scope: string;
-  authuser: number;
-  prompt: string;
-};
-
 // ###########
 //   Responses
 // ###########
 
-export type GetLoginUrlResponse = {
-  url: string;
-};
-export type LoginResponse = void;
+export type UserResponse = User;

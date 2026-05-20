@@ -6,6 +6,7 @@ export const restApi = createApi({
   reducerPath: "restApi",
   baseQuery: fetchBaseQuery({
     baseUrl: BACKEND_URL,
+    credentials: "include"
   }),
   endpoints: () => ({}),
   tagTypes: ["Movies", "User"],

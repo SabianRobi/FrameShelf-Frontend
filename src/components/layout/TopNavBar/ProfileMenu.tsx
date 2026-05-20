@@ -4,11 +4,13 @@ import { cn } from "@/lib/cn.ts";
 import { useAppSelector } from "@/redux/store.ts";
 import { ProfileMenuItem } from "@/components/layout/TopNavBar/ProfileMenuItem.tsx";
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 export const ProfileMenu = () => {
     const [isOpen, setOpen] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
-    const userId = useAppSelector((state) => state.user.id);
+    const userId = useAppSelector((state) => state.user.user?.id);
 
     // Close the menu when clicking outside
     useEffect(() => {
@@ -35,7 +37,8 @@ export const ProfileMenu = () => {
             {isOpen && (
                 <div className="absolute top-10 right-0 w-32 bg-surface shadow-lg text-center">
                     <ProfileMenuItem to={`/${userId}`}>My Profile</ProfileMenuItem>
-                    <ProfileMenuItem to="/logout" classNames="hover:bg-accent">
+
+                    <ProfileMenuItem redirect to={BACKEND_URL + "/auth/logout"} classNames="hover:bg-accent">
                         Logout
                     </ProfileMenuItem>
                 </div>

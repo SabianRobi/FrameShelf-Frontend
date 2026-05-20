@@ -1,25 +1,18 @@
-import { toast } from "react-toastify";
-import { Button } from "../../components/Button.tsx";
-import { useLazyGetLoginUrlQuery } from "../../redux/users/userApiSlice.ts";
+import { Navigate } from "react-router-dom";
 
 export const Login = () => {
-  const [getLoginUrl] = useLazyGetLoginUrlQuery();
+  // Since only one login method is currently implemented, just redirect the user to Google login.
+  return <Navigate to="/auth/login/google" />
 
-  const handleGetLoginUrl = () => {
-    getLoginUrl()
-      .unwrap()
-      .then((response) => (globalThis.location.href = response.url))
-      .catch((error) => {
-        toast.error("Failed to get login URL!");
-        console.error("Failed to fetch login URL:", error);
-      });
-  };
-
-  return (
-    <>
-      <Button onClick={handleGetLoginUrl}>
-        <p>Login with google</p>
-      </Button>
-    </>
-  );
+  // return (
+  //   <div className="flex justify-center my-auto">
+  //     <ul>
+  //       <li>
+  //         <Link to="/auth/login/google">
+  //           <GoogleLoginButton />
+  //         </Link>
+  //       </li>
+  //     </ul>
+  //   </div>
+  // );
 };
