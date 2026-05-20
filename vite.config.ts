@@ -9,8 +9,7 @@ import path from "node:path";
 
 export default defineConfig({
   server: {
-    port: 3000,
-    allowedHosts: ["frameshelf.local"],
+    port: 3000
   },
   plugins: [react(), deno(), tailwindcss()],
   optimizeDeps: {

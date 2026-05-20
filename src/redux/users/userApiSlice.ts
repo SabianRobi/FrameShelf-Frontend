@@ -8,16 +8,16 @@ export const userApiSlice = restApi.injectEndpoints({
     me: builder.query<UserResponse, void>({
       query: () => ({
         url: "/user/me"
-      }),
+      })
     }),
 
     logout: builder.mutation<void, void>({
       query: () => ({
         url: "/auth/logout",
-        method: "POST",
-      }),
-    }),
-  }),
+        method: "POST"
+      })
+    })
+  })
 });
 
 export const { useLogoutMutation, useMeQuery, useLazyMeQuery } = userApiSlice;

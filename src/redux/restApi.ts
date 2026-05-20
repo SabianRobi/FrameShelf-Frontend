@@ -9,5 +9,5 @@ export const restApi = createApi({
     credentials: "include"
   }),
   endpoints: () => ({}),
-  tagTypes: ["Movies", "User"],
+  tagTypes: ["Movies"],
 });
