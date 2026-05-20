@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { Bounce, ToastContainer } from "react-toastify";
 import "./main.css";
-
 import { store } from "./redux/store.ts";
 import { FrameShelfRoutes } from "./FrameShelfRoutes.tsx";
 

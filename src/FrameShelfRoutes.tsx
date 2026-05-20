@@ -1,7 +1,8 @@
 import { Home } from "./pages/Home.tsx";
 import { BrowserRouter, Route, Routes as Routes } from "react-router-dom";
-import { AppLayout } from "./components/layout/AppLayout.tsx";
-
+import { AppLayout } from "@/components/layout/AppLayout.tsx";
+import { LoginWithGoogle } from "@/pages/auth/LoginWithGoogle.tsx";
+import { Login } from "@/pages/auth/Login.tsx";
 
 export const FrameShelfRoutes = () => {
     return (
@@ -9,17 +10,23 @@ export const FrameShelfRoutes = () => {
             <Routes>
                 <Route element={<AppLayout />}>
                     <Route index element={<Home />} />
-                    {/* <Route path="users">
-                        <Route path=":userId">
-                            <Route index element={<Profile />} />
-                            <Route path="movies" element={<LikedMovies />} />
-                            <Route path="actors" element={<LikedActors />} />
-                        </Route>
+
+                    <Route path="auth/login">
+                        <Route index element={<Login />} />
+                        <Route path="google" element={<LoginWithGoogle />} />
                     </Route>
-                    <Route path="movie/:movieId" element={<MovieDetails />} />
-                    <Route path="actor/:actorId" element={<ActorDetails />} /> */}
+
+                    {/*
+                        <Route path="users">
+                            <Route path=":userId">
+                                <Route index element={<Profile />} />
+                                <Route path="movies" element={<LikedMovies />} />
+                                <Route path="actors" element={<LikedActors />} />
+                            </Route>
+                        </Route>
+                        */}
                 </Route>
-            </Routes>
-        </BrowserRouter>
+            </Routes >
+        </BrowserRouter >
     );
 }
