@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.7...v0.0.8) (2026-05-20)
+
+
+### Features
+
+* **auth:** Implemented oauth2 with Google ([8cb277e](https://github.com/SabianRobi/FrameShelf-Frontend/commit/8cb277efcf312cc07566a9a1515bd683d0d6b18a))
+* **oauth:** Implemented OAuth2 login ([f3ce005](https://github.com/SabianRobi/FrameShelf-Frontend/commit/f3ce0054b22796a5a49d9d93b27d80058bdc08b0))
+* **oauth:** Implemented oauth2 login with Google ([60893ab](https://github.com/SabianRobi/FrameShelf-Frontend/commit/60893abb916ad544ba964de1c2df8a3b9ec89774)), closes [#2](https://github.com/SabianRobi/FrameShelf-Frontend/issues/2)
+
 ### [0.0.7](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.6...v0.0.7) (2026-05-13)
 
 
