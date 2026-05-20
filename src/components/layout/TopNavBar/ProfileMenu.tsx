@@ -14,7 +14,7 @@ export const ProfileMenu = () => {
 
     // Close the menu when clicking outside
     useEffect(() => {
-        function onClick(e: MouseEvent) {
+        const onClick = (e: MouseEvent) => {
             if (ref.current && !ref.current.contains(e.target as Node)) {
                 setOpen(false);
             }
