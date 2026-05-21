@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.9...v0.0.10) (2026-05-21)
+
+
+### Features
+
+* **oauth:** Addded toast messages ([0593878](https://github.com/SabianRobi/FrameShelf-Frontend/commit/0593878231e7c41fc153cdb20a4510ab14ad3803))
+
 ### [0.0.9](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.8...v0.0.9) (2026-05-20)
 
 ### [0.0.8](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.7...v0.0.8) (2026-05-20)
