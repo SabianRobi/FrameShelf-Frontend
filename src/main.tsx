@@ -8,19 +8,17 @@ import { FrameShelfRoutes } from "./FrameShelfRoutes.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Provider store={store}>
+    <Provider store={ store }>
       <div id="modalRoot" />
-      <div id="bodyRoot">
-        <FrameShelfRoutes />
-      </div>
+      <FrameShelfRoutes />
       <ToastContainer
         closeOnClick
         pauseOnFocusLoss
         theme="dark"
         position="top-right"
-        autoClose={3000}
-        draggable={false}
-        transition={Bounce}
+        autoClose={ 3000 }
+        draggable={ false }
+        transition={ Bounce }
       />
     </Provider>
   </StrictMode>

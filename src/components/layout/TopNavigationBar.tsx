@@ -1,7 +1,7 @@
 import { useAppSelector } from "@/redux/store.ts";
 import { Container } from "@/components/layout/Container.tsx";
-import { ProfileMenu } from "./ProfileMenu.tsx";
-import { MenuItem } from "./MenuItem.tsx";
+import { ProfileMenu } from "./TopNavBar/ProfileMenu.tsx";
+import { MenuItem } from "./TopNavBar/MenuItem.tsx";
 import { Link } from "react-router-dom";
 
 export const TopNavigationBar = () => {
@@ -18,15 +18,15 @@ export const TopNavigationBar = () => {
 
           <nav>
             <ul className="flex gap-8 items-center">
-              {isLoggedIn ? (
+              { isLoggedIn ? (
                 <>
                   <MenuItem to="/search" label="Search" />
-                  <MenuItem to={`/${userId}/lists`} label="My lists" />
+                  <MenuItem to={ `/users/${userId}/lists` } label="My lists" />
                   <ProfileMenu />
                 </>
               ) : (
                 <MenuItem to="/auth/login" label="Login" />
-              )}
+              ) }
             </ul>
           </nav>
         </div>

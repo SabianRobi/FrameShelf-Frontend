@@ -15,6 +15,10 @@ export type User = {
 //   Requests
 // ###########
 
+export type DeleteUserRequest = {
+  userId: string;
+};
+
 // ###########
 //   Responses
 // ###########

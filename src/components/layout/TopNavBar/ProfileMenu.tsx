@@ -7,7 +7,7 @@ import { ProfileMenuItem } from "@/components/layout/TopNavBar/ProfileMenuItem.t
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 export const ProfileMenu = () => {
-    const [isOpen, setOpen] = useState(false);
+    const [isProfileMenuOpen, setProfileMenuOpen] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
     const userId = useAppSelector((state) => state.user.user?.id);
@@ -16,7 +16,7 @@ export const ProfileMenu = () => {
     useEffect(() => {
         const onClick = (e: MouseEvent) => {
             if (ref.current && !ref.current.contains(e.target as Node)) {
-                setOpen(false);
+                setProfileMenuOpen(false);
             }
         }
 
@@ -28,17 +28,17 @@ export const ProfileMenu = () => {
         <div className="relative" ref={ref}>
             <button
                 type="button"
-                className={cn("cursor-pointer hover:text-primary", isOpen && "text-primary")}
-                onClick={() => setOpen(v => !v)}
+                className={cn("cursor-pointer hover:text-primary", isProfileMenuOpen && "text-primary")}
+                onClick={() => setProfileMenuOpen(v => !v)}
             >
                 <FaUser />
             </button>
 
-            {isOpen && (
+            {isProfileMenuOpen && (
                 <div className="absolute top-10 right-0 w-32 bg-surface shadow-lg text-center">
-                    <ProfileMenuItem to={`/${userId}`}>My Profile</ProfileMenuItem>
+                    <ProfileMenuItem to={`/users/${userId}`} setProfileMenuOpen={setProfileMenuOpen} >My Profile</ProfileMenuItem>
 
-                    <ProfileMenuItem redirect to={BACKEND_URL + "/auth/logout"} classNames="hover:bg-accent">
+                    <ProfileMenuItem redirect to={BACKEND_URL + "/auth/logout"} classNames="hover:bg-accent" setProfileMenuOpen={setProfileMenuOpen}>
                         Logout
                     </ProfileMenuItem>
                 </div>
