@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.10...v0.0.11) (2026-05-21)
+
+
+### Features
+
+* **user:** Added user profile page ([7c4c215](https://github.com/SabianRobi/FrameShelf-Frontend/commit/7c4c215735e2c53bab7700d864f6bc770d487821))
+
 ### [0.0.10](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.9...v0.0.10) (2026-05-21)
 
 
