@@ -1,23 +1,41 @@
-import { PropsWithChildren, useEffect } from "react";
+import { type PropsWithChildren, useEffect, useState } from "react";
 import { useAppDispatch } from "@/redux/store.ts";
-import { useMeQuery } from "@/redux/users/userApiSlice.ts"
-import { setUser, clearUser, setInitialized } from "@/redux/users/userSlice.ts"
+import { useMeQuery } from "@/redux/users/userApiSlice.ts";
+import { setUser, clearUser, setInitialized } from "@/redux/users/userSlice.ts";
+import { SplashScreen } from './SplashScreen.tsx';
 
 export const AuthProvider = ({ children }: PropsWithChildren) => {
+    const [ minimumTimePassed, setMinimumTimePassed ] = useState(false);
+
     const dispatch = useAppDispatch();
-    const { data: user, isError } = useMeQuery();
+    const { data: user, isLoading, isSuccess, isError } = useMeQuery();
 
     useEffect(() => {
-        if (user) {
+        const timeout = setTimeout(() => {
+            setMinimumTimePassed(true);
+        }, 1000);
+
+        return () => clearTimeout(timeout);
+    }, []);
+
+    useEffect(() => {
+        if (isSuccess) {
             dispatch(setUser(user));
+            dispatch(setInitialized(true));
         }
 
         if (isError) {
             dispatch(clearUser());
+            dispatch(setInitialized(true));
         }
+    }, [ isSuccess, isError, user, dispatch ]);
 
-        dispatch(setInitialized(true));
-    }, [user, isError]);
+    const stillInitializing = isLoading || !minimumTimePassed;
 
-    return children;
-}
+    return (
+        <>
+            <SplashScreen visible={ stillInitializing } />
+            { !stillInitializing && children }
+        </>
+    );
+};

@@ -5,21 +5,24 @@ import { Bounce, ToastContainer } from "react-toastify";
 import "./main.css";
 import { store } from "./redux/store.ts";
 import { FrameShelfRoutes } from "./FrameShelfRoutes.tsx";
+import { AuthProvider } from "@/components/layout/auth/AuthProvider.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={ store }>
-      <div id="modalRoot" />
-      <FrameShelfRoutes />
-      <ToastContainer
-        closeOnClick
-        pauseOnFocusLoss
-        theme="dark"
-        position="top-right"
-        autoClose={ 3000 }
-        draggable={ false }
-        transition={ Bounce }
-      />
+      <AuthProvider>
+        <div id="modalRoot" />
+        <FrameShelfRoutes />
+        <ToastContainer
+          closeOnClick
+          pauseOnFocusLoss
+          theme="dark"
+          position="top-right"
+          autoClose={ 3000 }
+          draggable={ false }
+          transition={ Bounce }
+        />
+      </AuthProvider>
     </Provider>
-  </StrictMode>
+  </StrictMode >
 );
