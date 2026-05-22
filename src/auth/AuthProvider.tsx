@@ -2,7 +2,7 @@ import { type PropsWithChildren, useEffect, useState } from "react";
 import { useAppDispatch } from "@/redux/store.ts";
 import { useMeQuery } from "@/redux/users/userApiSlice.ts";
 import { setUser, clearUser, setInitialized } from "@/redux/users/userSlice.ts";
-import { SplashScreen } from './SplashScreen.tsx';
+import { SplashScreen } from '@/pages/SplashScreen.tsx';
 
 export const AuthProvider = ({ children }: PropsWithChildren) => {
     const [ minimumTimePassed, setMinimumTimePassed ] = useState(false);

@@ -5,7 +5,7 @@ import { Bounce, ToastContainer } from "react-toastify";
 import "./main.css";
 import { store } from "./redux/store.ts";
 import { FrameShelfRoutes } from "./FrameShelfRoutes.tsx";
-import { AuthProvider } from "@/components/layout/auth/AuthProvider.tsx";
+import { AuthProvider } from "@/auth/AuthProvider.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
