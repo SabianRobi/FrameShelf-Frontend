@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.13](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.12...v0.0.13) (2026-05-22)
+
+
+### Bug Fixes
+
+* **auth:** Fixed logout ([e76b639](https://github.com/SabianRobi/FrameShelf-Frontend/commit/e76b639283f982bc256062df5da5ddebcda12bcc))
+
 ### [0.0.12](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.11...v0.0.12) (2026-05-22)
 
 
