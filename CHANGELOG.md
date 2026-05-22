@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.15](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.14...v0.0.15) (2026-05-22)
+
+
+### Features
+
+* Displayed versions in Footer ([5384acc](https://github.com/SabianRobi/FrameShelf-Frontend/commit/5384acce2f2fa7cd7a1829eeb7c14a966f1b5455))
+
 ### [0.0.14](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.13...v0.0.14) (2026-05-22)
 
 
