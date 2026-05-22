@@ -1,3 +1,10 @@
+## [0.0.17](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.16...v0.0.17) (2026-05-22)
+
+
+### Bug Fixes
+
+* **ci:** Updated action versions ([132398c](https://github.com/SabianRobi/FrameShelf-Frontend/commit/132398ce5edb5fd4ea5eb1d91bf373ea81146c9e))
+
 ## [0.0.16](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.15...v0.0.16) (2026-05-22)
 
 
