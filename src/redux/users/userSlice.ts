@@ -19,7 +19,9 @@ export const userSlice = createSlice({
       state.user = payload;
     },
 
-    clearUser: () => initialState,
+    clearUser: (state) => {
+      state.user = null;
+    },
 
     setInitialized: (state, { payload }) => {
       state.initialized = payload;
