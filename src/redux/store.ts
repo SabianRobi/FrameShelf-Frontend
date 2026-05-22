@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 import { restApi } from "./restApi.ts";
 import { userSlice } from "./users/userSlice.ts";
+import { backendInfoSlice } from './backend/backendSlice.ts';
 
 const DBEUG = Boolean(import.meta.env.VITE_DEBUG.toLowerCase() == "true");
 
@@ -9,7 +10,8 @@ export const store = configureStore({
   devTools: DBEUG,
   reducer: {
     user: userSlice.reducer,
-    [restApi.reducerPath]: restApi.reducer,
+    backend: backendInfoSlice.reducer,
+    [ restApi.reducerPath ]: restApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(restApi.middleware),

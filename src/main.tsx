@@ -6,13 +6,17 @@ import "./main.css";
 import { store } from "./redux/store.ts";
 import { FrameShelfRoutes } from "./FrameShelfRoutes.tsx";
 import { AuthProvider } from "@/auth/AuthProvider.tsx";
+import { BackendInfoUpdater } from "@/auth/BackendInfoUpdater.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={ store }>
       <AuthProvider>
         <div id="modalRoot" />
+        <BackendInfoUpdater />
+
         <FrameShelfRoutes />
+
         <ToastContainer
           closeOnClick
           pauseOnFocusLoss
