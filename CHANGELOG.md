@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.12](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.11...v0.0.12) (2026-05-22)
+
+
+### Features
+
+* **splash-screen:** Added splash screen ([bd556b3](https://github.com/SabianRobi/FrameShelf-Frontend/commit/bd556b39319c8928ba89b8a29d59f40ccbce1075))
+
 ### [0.0.11](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.10...v0.0.11) (2026-05-21)
 
 
