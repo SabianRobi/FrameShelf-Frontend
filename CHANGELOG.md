@@ -1,3 +1,10 @@
+## [0.0.16](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.15...v0.0.16) (2026-05-22)
+
+
+### Bug Fixes
+
+* **ci:** Fixed versioning ([8882421](https://github.com/SabianRobi/FrameShelf-Frontend/commit/88824214a75bd919abe51c15f961f550e91d9330))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
