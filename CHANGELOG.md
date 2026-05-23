@@ -1,3 +1,10 @@
+## [0.0.19](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.18...v0.0.19) (2026-05-23)
+
+
+### Bug Fixes
+
+* **footer:** Fixed footer link ([2370d40](https://github.com/SabianRobi/FrameShelf-Frontend/commit/2370d4089f1cde7295996aec59ef8797fba1f9c4))
+
 ## [0.0.18](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.17...v0.0.18) (2026-05-22)
 
 
