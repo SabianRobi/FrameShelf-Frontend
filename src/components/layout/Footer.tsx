@@ -1,6 +1,7 @@
 import { FaGithub } from "react-icons/fa6";
 import { Container } from "./Container.tsx";
 import { useAppSelector } from '@/redux/store.ts';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -17,16 +18,20 @@ export const Footer = () => {
                     </div>
                     <div className="flex gap-4">
                         <p className="text-sm text-center">
-                            &copy; { currentYear } <a href="/">
+                            &copy; { currentYear + " " }
+                            <Link to="/" >
                                 FrameShelf
-                            </a>. All rights reserved.
+                            </Link>
+                            . All rights reserved.
                         </p>
                     </div>
-                    <div><a href="https://github.com/SabianRobi/FrameShelf-Frontend" target="_blank" className="text-xl">
-                        <FaGithub />
-                    </a></div>
-                </div>
-            </Container>
-        </div>
+                    <div>
+                        <Link to="https://github.com/SabianRobi/FrameShelf-Frontend" target="_blank" className="text-xl">
+                            <FaGithub />
+                        </Link>
+                    </div>
+                </div >
+            </Container >
+        </div >
     );
 };
