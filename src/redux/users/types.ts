@@ -3,12 +3,12 @@
 // ###########
 
 export type User = {
-  id: string;
-  username: string;
-  displayName: string;
-  profilePicture: string;
-  createdAt: string;
-  lastLoginAt: string;
+    id: string;
+    username: string;
+    displayName: string;
+    profilePicture: string;
+    createdAt: string;
+    lastLoginAt: string;
 };
 
 // ###########
@@ -16,7 +16,7 @@ export type User = {
 // ###########
 
 export type DeleteUserRequest = {
-  userId: string;
+    userId: string;
 };
 
 // ###########

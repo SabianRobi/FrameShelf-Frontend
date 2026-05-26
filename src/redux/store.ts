@@ -2,19 +2,18 @@ import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 import { restApi } from "./restApi";
 import { userSlice } from "./users/userSlice";
-import { backendInfoSlice } from './backend/backendSlice';
+import { backendInfoSlice } from "./backend/backendSlice";
 
-const DBEUG = Boolean(import.meta.env.VITE_DEBUG.toLowerCase() == "true");
+const DBEUG = Boolean(import.meta.env.VITE_DEBUG.toLowerCase() === "true");
 
 export const store = configureStore({
-  devTools: DBEUG,
-  reducer: {
-    user: userSlice.reducer,
-    backend: backendInfoSlice.reducer,
-    [ restApi.reducerPath ]: restApi.reducer,
-  },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(restApi.middleware),
+    devTools: DBEUG,
+    reducer: {
+        user: userSlice.reducer,
+        backend: backendInfoSlice.reducer,
+        [restApi.reducerPath]: restApi.reducer
+    },
+    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(restApi.middleware)
 });
 
 export type RootState = ReturnType<typeof store.getState>;

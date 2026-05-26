@@ -1,34 +1,24 @@
-import { ButtonHTMLAttributes, Fragment } from "react";
+import { type ButtonHTMLAttributes, Fragment } from "react";
 import { FaSpinner } from "react-icons/fa6";
 import { cn } from "@/lib/cn";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  isLoading?: boolean;
+    isLoading?: boolean;
 };
 
-export const Button = ({
-  children,
-  className,
-  isLoading,
-  disabled,
-  type = "button",
-  ...buttonProps
-}: ButtonProps) => {
-  return (
+export const Button = ({ children, className, isLoading, disabled, type = "button", ...buttonProps }: ButtonProps) => (
     <button
-      className={ cn("p-2 cursor-pointer rounded-md border-primary bg-surface hover:text-background hover:bg-primary disabled:cursor-not-allowed disabled:opacity-50 transition", className) }
-      type={ type }
-      disabled={ disabled || isLoading }
-      { ...buttonProps }
+        className={cn(
+            "border-primary bg-surface hover:text-background hover:bg-primary cursor-pointer rounded-md p-2 transition disabled:cursor-not-allowed disabled:opacity-50",
+            className
+        )}
+        disabled={disabled || isLoading}
+        type={type}
+        {...buttonProps}
     >
-      <div className="flex items-center justify-center relative">
-        { children }
-        { isLoading ? (
-          <FaSpinner className="ml-2 animate-spin w-6 h-6" />
-        ) : (
-          <Fragment />
-        ) }
-      </div>
+        <div className="relative flex items-center justify-center">
+            {children}
+            {isLoading ? <FaSpinner className="ml-2 h-6 w-6 animate-spin" /> : <Fragment />}
+        </div>
     </button>
-  );
-};
+);

@@ -1,3 +1,1 @@
-export const ActorDetails = () => {
-  return <div>ActorDetails</div>;
-};
+export const ActorDetails = () => <div>ActorDetails</div>;

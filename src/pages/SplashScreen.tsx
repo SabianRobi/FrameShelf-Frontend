@@ -1,12 +1,12 @@
 import { cn } from "@/lib/cn";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 type SplashScreenProps = {
     visible: boolean;
 };
 
 export const SplashScreen = ({ visible }: SplashScreenProps) => {
-    const [ currentQuote, setCurrentQuote ] = useState("");
+    const [currentQuote, setCurrentQuote] = useState("");
 
     const quotes = [
         "Netflix forgot what you watched. FrameShelf didn't.",
@@ -22,19 +22,20 @@ export const SplashScreen = ({ visible }: SplashScreenProps) => {
     ];
 
     useEffect(() => {
-        setCurrentQuote(quotes[ Math.floor(Math.random() * quotes.length) ]);
+        setCurrentQuote(quotes[Math.floor(Math.random() * quotes.length)]);
     }, []);
 
     return (
-        <div className={ cn("fixed inset-0 flex justify-center items-center bg-background transition-opacity duration-300", visible ? "opacity-100" : "opacity-0 pointer-events-none") }>
-            <div className="animate-pulse flex flex-col justify-center items-center gap-4">
-                <p className="text-5xl font-bold">
-                    FrameShelf
-                </p>
+        <div
+            className={cn(
+                "bg-background fixed inset-0 flex items-center justify-center transition-opacity duration-300",
+                visible ? "opacity-100" : "pointer-events-none opacity-0"
+            )}
+        >
+            <div className="flex animate-pulse flex-col items-center justify-center gap-4">
+                <p className="text-5xl font-bold">FrameShelf</p>
 
-                <p className="text-lg italic text-muted-foreground animate-fade-in">
-                    { currentQuote }
-                </p>
+                <p className="text-muted-foreground animate-fade-in text-lg italic">{currentQuote}</p>
             </div>
         </div>
     );

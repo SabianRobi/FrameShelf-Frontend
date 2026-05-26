@@ -7,29 +7,26 @@ import { Profile } from "@/pages/Profile";
 import { Lists } from "@/pages/Lists";
 import { ProtectedRoute } from "@/auth/ProtectedRoute";
 
-export const FrameShelfRoutes = () => {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route element={ <AppLayout /> } >
-                    <Route index element={ <Home /> } />
+export const FrameShelfRoutes = () => (
+    <BrowserRouter>
+        <Routes>
+            <Route element={<AppLayout />}>
+                <Route element={<Home />} index />
 
-                    <Route path="auth/login">
-                        <Route index element={ <Login /> } />
-                        <Route path="google" element={ <LoginWithGoogle /> } />
-                    </Route>
+                <Route path="auth/login">
+                    <Route element={<Login />} index />
+                    <Route element={<LoginWithGoogle />} path="google" />
+                </Route>
 
-                    <Route element={ <ProtectedRoute /> }>
-                        <Route path="users">
-                            <Route path=":userId">
-                                <Route index element={ <Profile /> } />
-                                <Route path="lists" element={ <Lists /> } />
-                            </Route>
+                <Route element={<ProtectedRoute />}>
+                    <Route path="users">
+                        <Route path=":userId">
+                            <Route element={<Profile />} index />
+                            <Route element={<Lists />} path="lists" />
                         </Route>
-
                     </Route>
                 </Route>
-            </Routes >
-        </BrowserRouter >
-    );
-};
+            </Route>
+        </Routes>
+    </BrowserRouter>
+);
