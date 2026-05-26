@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { FaUser } from "react-icons/fa6";
-import { cn } from "@/lib/cn.ts";
-import { useAppSelector } from "@/redux/store.ts";
-import { ProfileMenuItem } from "@/components/layout/TopNavBar/ProfileMenuItem.tsx";
-import { useLogoutMutation } from "@/redux/users/userApiSlice.ts";
+import { cn } from "@/lib/cn";
+import { useAppSelector } from "@/redux/store";
+import { ProfileMenuItem } from "@/components/layout/TopNavBar/ProfileMenuItem";
+import { useLogoutMutation } from "@/redux/users/userApiSlice";
 import { toast } from 'react-toastify';
-import { useAppDispatch } from "@/redux/store.ts";
-import { clearUser } from '@/redux/users/userSlice.ts';
+import { useAppDispatch } from "@/redux/store";
+import { clearUser } from '@/redux/users/userSlice';
 
 export const ProfileMenu = () => {
     const dispatch = useAppDispatch();

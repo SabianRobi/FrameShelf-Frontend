@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useGetBackendInfoMutation } from "@/redux/backend/backendApiSlice.ts";
+import { useGetBackendInfoMutation } from "@/redux/backend/backendApiSlice";
 
 export const BackendInfoUpdater = () => {
     const [ getBackendInfo ] = useGetBackendInfoMutation();

@@ -4,7 +4,7 @@ import {
   AsyncPaginate,
   type AsyncPaginateProps,
 } from "react-select-async-paginate";
-import CustomOption from "./CustomOption.tsx";
+import CustomOption from "./CustomOption";
 
 type SearchSelectProps<
   Option,

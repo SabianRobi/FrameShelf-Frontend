@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
-import { TopNavigationBar } from "@/components/layout/TopNavigationBar.tsx";
-import { Footer } from "./Footer.tsx";
-import { Container } from "./Container.tsx";
-import { cn } from "@/lib/cn.ts";
+import { TopNavigationBar } from "@/components/layout/TopNavigationBar";
+import { Footer } from "./Footer";
+import { Container } from "./Container";
+import { cn } from "@/lib/cn";
 import { useLocation } from "react-router-dom";
 import { matchPath } from "react-router-dom";
 

@@ -1,6 +1,6 @@
 import { FaGithub } from "react-icons/fa6";
-import { Container } from "./Container.tsx";
-import { useAppSelector } from '@/redux/store.ts';
+import { Container } from "./Container";
+import { useAppSelector } from '@/redux/store';
 import { Link } from 'react-router-dom';
 
 export const Footer = () => {

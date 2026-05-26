@@ -1,5 +1,5 @@
 import { Link, type LinkProps } from "react-router-dom";
-import { cn } from "@/lib/cn.ts";
+import { cn } from "@/lib/cn";
 import { type PropsWithChildren, type Dispatch, type SetStateAction } from "react";
 
 type ProfileMenuItemProps = PropsWithChildren<LinkProps> & {

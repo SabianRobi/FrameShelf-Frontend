@@ -3,17 +3,17 @@ import { Controller, useForm } from "react-hook-form";
 import Select, { GroupBase } from "react-select";
 import { toast } from "react-toastify";
 import languages from "@/assets/languages.json" with { type: "json" };
-import { Button } from "@/components/Button.tsx";
-import SearchSelect from "@/components/search-select/SearchSelect.tsx";
+import { Button } from "@/components/Button";
+import SearchSelect from "@/components/search-select/SearchSelect";
 import {
   useCreateMovieMutation,
   useLazySearchMoviesQuery,
-} from "@/redux/movies/movieApiSlice.ts";
+} from "@/redux/movies/movieApiSlice";
 import {
   CreateMovieRequest,
   MovieSearchResult,
   SearchMoviesResponse,
-} from "@/redux/movies/types.ts";
+} from "@/redux/movies/types";
 
 type LikeMovieModalContentProps = {
   setShowModal: Dispatch<SetStateAction<boolean>>;

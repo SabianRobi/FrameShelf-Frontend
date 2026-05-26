@@ -1,9 +1,9 @@
-import { Modal } from "@/components/Modal.tsx";
+import { Modal } from "@/components/Modal";
 import { type Dispatch, type SetStateAction } from 'react';
-import { useDeleteUserMutation } from '@/redux/users/userApiSlice.ts';
-import { useAppSelector } from "@/redux/store.ts";
+import { useDeleteUserMutation } from '@/redux/users/userApiSlice';
+import { useAppSelector } from "@/redux/store";
 import { toast } from 'react-toastify';
-import { Button } from '@/components/Button.tsx';
+import { Button } from '@/components/Button';
 
 type ConfirmDeleteUserModalProps = {
     isModalOpen: boolean;

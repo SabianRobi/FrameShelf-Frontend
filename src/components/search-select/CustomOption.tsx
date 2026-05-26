@@ -1,5 +1,5 @@
 import { GroupBase, type OptionProps, components } from "react-select";
-import { MovieSearchResult } from "@/redux/movies/types.ts";
+import { MovieSearchResult } from "@/redux/movies/types";
 
 const CustomOption = <
   Option,

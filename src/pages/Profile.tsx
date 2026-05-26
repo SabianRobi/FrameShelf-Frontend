@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { useAppSelector } from '@/redux/store.ts';
-import { Button } from "@/components/Button.tsx";
+import { useAppSelector } from '@/redux/store';
+import { Button } from "@/components/Button";
 import { FaUser } from "react-icons/fa6";
-import { ConfirmDeleteUserModal } from "@/pages/profile/ConfirmDeleteUserModal.tsx";
-import { ProfileTable } from "@/pages/profile/ProfileTable.tsx";
+import { ConfirmDeleteUserModal } from "@/pages/profile/ConfirmDeleteUserModal";
+import { ProfileTable } from "@/pages/profile/ProfileTable";
 
 export const Profile = () => {
   const user = useAppSelector((state) => state.user.user);

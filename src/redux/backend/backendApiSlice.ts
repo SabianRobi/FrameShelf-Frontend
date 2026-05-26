@@ -1,6 +1,6 @@
-import { restApi } from "@/redux/restApi.ts";
-import { type BackendInfoResponse } from "./types.ts";
-import { setBackendInfo } from "./backendSlice.ts";
+import { restApi } from "@/redux/restApi";
+import { type BackendInfoResponse } from "./types";
+import { setBackendInfo } from "./backendSlice";
 
 export const backendApiSlice = restApi.injectEndpoints({
   endpoints: (builder) => ({

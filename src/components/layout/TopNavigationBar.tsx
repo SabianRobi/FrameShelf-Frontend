@@ -1,7 +1,7 @@
-import { useAppSelector } from "@/redux/store.ts";
-import { Container } from "@/components/layout/Container.tsx";
-import { ProfileMenu } from "./TopNavBar/ProfileMenu.tsx";
-import { MenuItem } from "./TopNavBar/MenuItem.tsx";
+import { useAppSelector } from "@/redux/store";
+import { Container } from "@/components/layout/Container";
+import { ProfileMenu } from "./TopNavBar/ProfileMenu";
+import { MenuItem } from "./TopNavBar/MenuItem";
 import { Link } from "react-router-dom";
 
 export const TopNavigationBar = () => {

@@ -3,10 +3,10 @@ import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { Bounce, ToastContainer } from "react-toastify";
 import "./main.css";
-import { store } from "./redux/store.ts";
-import { FrameShelfRoutes } from "./FrameShelfRoutes.tsx";
-import { AuthProvider } from "@/auth/AuthProvider.tsx";
-import { BackendInfoUpdater } from "@/auth/BackendInfoUpdater.tsx";
+import { store } from "./redux/store";
+import { FrameShelfRoutes } from "./FrameShelfRoutes";
+import { AuthProvider } from "@/auth/AuthProvider";
+import { BackendInfoUpdater } from "@/auth/BackendInfoUpdater";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

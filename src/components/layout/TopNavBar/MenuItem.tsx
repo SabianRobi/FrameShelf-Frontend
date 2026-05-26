@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ReactNode } from "react";
-import { cn } from "@/lib/cn.ts";
+import { cn } from "@/lib/cn";
 import type { ClassValue } from "clsx";
 
 type MenuItemProps = {

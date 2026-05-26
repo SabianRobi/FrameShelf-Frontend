@@ -1,6 +1,6 @@
-import { restApi } from "../restApi.ts";
-import { type DeleteUserRequest, type UserResponse } from "./types.ts";
-import { clearUser } from "@/redux/users/userSlice.ts";
+import { restApi } from "../restApi";
+import { type DeleteUserRequest, type UserResponse } from "./types";
+import { clearUser } from "@/redux/users/userSlice";
 
 export const userApiSlice = restApi.injectEndpoints({
   endpoints: (builder) => ({

@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn.ts";
+import { cn } from "@/lib/cn";
 import { useEffect, useState } from 'react';
 
 type SplashScreenProps = {

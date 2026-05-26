@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { BackendInfo } from "./types.ts";
+import type { BackendInfo } from "./types";
 
 type BackendInfoState = {
   info: BackendInfo | null;

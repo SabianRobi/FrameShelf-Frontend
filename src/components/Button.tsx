@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, Fragment } from "react";
 import { FaSpinner } from "react-icons/fa6";
-import { cn } from "@/lib/cn.ts";
+import { cn } from "@/lib/cn";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isLoading?: boolean;

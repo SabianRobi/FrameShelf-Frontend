@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import { useAppSelector } from '@/redux/store.ts';
+import { useAppSelector } from '@/redux/store';
 import dayjs from 'dayjs';
 
 export const ProfileTable = () => {

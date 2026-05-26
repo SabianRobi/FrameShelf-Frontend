@@ -1,4 +1,4 @@
-import { restApi } from "@/redux/restApi.ts";
+import { restApi } from "@/redux/restApi";
 import {
   CreateMovieRequest,
   CreateMovieResponse,
@@ -13,7 +13,7 @@ import {
   Movie,
   SearchMoviesRequest,
   SearchMoviesResponse,
-} from "./types.ts";
+} from "./types";
 
 export const movieApi = restApi.injectEndpoints({
   endpoints: (build) => ({

@@ -1,11 +1,11 @@
-import { Home } from "./pages/Home.tsx";
+import { Home } from "./pages/Home";
 import { BrowserRouter, Route, Routes as Routes } from "react-router-dom";
-import { AppLayout } from "@/components/layout/AppLayout.tsx";
-import { LoginWithGoogle } from "@/pages/auth/LoginWithGoogle.tsx";
-import { Login } from "@/pages/auth/Login.tsx";
-import { Profile } from "@/pages/Profile.tsx";
-import { Lists } from "@/pages/Lists.tsx";
-import { ProtectedRoute } from "@/auth/ProtectedRoute.tsx";
+import { AppLayout } from "@/components/layout/AppLayout";
+import { LoginWithGoogle } from "@/pages/auth/LoginWithGoogle";
+import { Login } from "@/pages/auth/Login";
+import { Profile } from "@/pages/Profile";
+import { Lists } from "@/pages/Lists";
+import { ProtectedRoute } from "@/auth/ProtectedRoute";
 
 export const FrameShelfRoutes = () => {
     return (

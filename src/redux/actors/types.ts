@@ -2,7 +2,7 @@
 //   General
 // ###########
 
-import { PaginableRequest, PaginableResponse, Request } from "../types.ts";
+import { PaginableRequest, PaginableResponse, Request } from "../types";
 
 export type Actor = {
   id: number;

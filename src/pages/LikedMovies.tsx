@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Button } from "@/components/Button.tsx";
-import { MovieCard } from "@/components/MovieCard.tsx";
-import { useLazyGetMoviesQuery } from "@/redux/movies/movieApiSlice.ts";
-import { Movie } from "@/redux/movies/types.ts";
+import { Button } from "@/components/Button";
+import { MovieCard } from "@/components/MovieCard";
+import { useLazyGetMoviesQuery } from "@/redux/movies/movieApiSlice";
+import { Movie } from "@/redux/movies/types";
 
 export const LikedMovies = () => {
   const pageSize = 20;

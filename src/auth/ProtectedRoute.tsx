@@ -1,4 +1,4 @@
-import { useAppSelector } from "@/redux/store.ts";
+import { useAppSelector } from "@/redux/store";
 import { Navigate, Outlet } from 'react-router-dom';
 
 export const ProtectedRoute = () => {

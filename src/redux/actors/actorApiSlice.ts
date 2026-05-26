@@ -1,4 +1,4 @@
-import { restApi } from "@/redux/restApi.ts";
+import { restApi } from "@/redux/restApi";
 import {
   Actor,
   CreateActorRequest,
@@ -11,7 +11,7 @@ import {
   GetActorsResponse,
   SearchActorRequest,
   SearchActorResponse,
-} from "./types.ts";
+} from "./types";
 
 export const movieApi = restApi.injectEndpoints({
   endpoints: (builder) => ({
