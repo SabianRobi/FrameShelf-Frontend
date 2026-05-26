@@ -1,3 +1,10 @@
+## [0.0.20](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.19...v0.0.20) (2026-05-26)
+
+
+### Bug Fixes
+
+* **prettier:** Fixed package.json foramtting ([30d8582](https://github.com/SabianRobi/FrameShelf-Frontend/commit/30d85825565710b4fc467a077d6a7d1924e544cf))
+
 ## [0.0.19](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.18...v0.0.19) (2026-05-23)
 
 
