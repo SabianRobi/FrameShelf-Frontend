@@ -1,11 +1,11 @@
-import { useAuthToast } from "@/pages/home/useAuthToast.tsx";
+import { useAuthToast } from "@/pages/home/useAuthToast";
 
 export const Home = () => {
-  useAuthToast();
+    useAuthToast();
 
-  return (
-    <>
-      <div>Home</div>
-    </>
-  );
+    return (
+        <>
+            <div>Home</div>
+        </>
+    );
 };

@@ -3,30 +3,30 @@ import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { Bounce, ToastContainer } from "react-toastify";
 import "./main.css";
-import { store } from "./redux/store.ts";
-import { FrameShelfRoutes } from "./FrameShelfRoutes.tsx";
-import { AuthProvider } from "@/auth/AuthProvider.tsx";
-import { BackendInfoUpdater } from "@/auth/BackendInfoUpdater.tsx";
+import { store } from "./redux/store";
+import { FrameShelfRoutes } from "./FrameShelfRoutes";
+import { AuthProvider } from "@/auth/AuthProvider";
+import { BackendInfoUpdater } from "@/auth/BackendInfoUpdater";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <Provider store={ store }>
-      <AuthProvider>
-        <div id="modalRoot" />
-        <BackendInfoUpdater />
+    <StrictMode>
+        <Provider store={store}>
+            <AuthProvider>
+                <div id="modalRoot" />
+                <BackendInfoUpdater />
 
-        <FrameShelfRoutes />
+                <FrameShelfRoutes />
 
-        <ToastContainer
-          closeOnClick
-          pauseOnFocusLoss
-          theme="dark"
-          position="top-right"
-          autoClose={ 3000 }
-          draggable={ false }
-          transition={ Bounce }
-        />
-      </AuthProvider>
-    </Provider>
-  </StrictMode >
+                <ToastContainer
+                    autoClose={3000}
+                    closeOnClick
+                    draggable={false}
+                    pauseOnFocusLoss
+                    position="top-right"
+                    theme="dark"
+                    transition={Bounce}
+                />
+            </AuthProvider>
+        </Provider>
+    </StrictMode>
 );

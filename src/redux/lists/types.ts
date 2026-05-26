@@ -1,16 +1,16 @@
-import { type PageResponse } from '@/redux/types.ts';
+import { type PageResponse } from "@/redux/types";
 
 // ###########
 //   Models
 // ###########
 
 export type List = {
-  createdAt: string;
-  id: string;
-  name: string;
-  type: ListType;
-  updatedAt: string;
-  userId: string;
+    createdAt: string;
+    id: string;
+    name: string;
+    type: ListType;
+    updatedAt: string;
+    userId: string;
 };
 
 export type ListType = "PERSON" | "MOVIE";

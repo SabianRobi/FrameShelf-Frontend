@@ -2,17 +2,17 @@
 //   Requests
 // ###########
 
-// export type Request<T> = PaginableRequest & SortableRequest<T>;
+// Export type Request<T> = PaginableRequest & SortableRequest<T>;
 
-// export type PaginableRequest = Partial<{
-//   page: number;
-//   pageSize: number;
+// Export type PaginableRequest = Partial<{
+//   Page: number;
+//   PageSize: number;
 // }>;
 
-// export type SortableRequest<T> = {
-//   sort?: Array<{
-//     field: keyof T;
-//     direction: "asc" | "desc";
+// Export type SortableRequest<T> = {
+//   Sort?: Array<{
+//     Field: keyof T;
+//     Direction: "asc" | "desc";
 //   }>;
 // };
 
@@ -21,11 +21,11 @@
 // ###########
 
 export type PageResponse<T> = {
-  content: T[];
-  page: {
-    size: number;
-    number: number;
-    totalElements: number;
-    totalPages: number;
-  };
+    content: T[];
+    page: {
+        size: number;
+        number: number;
+        totalElements: number;
+        totalPages: number;
+    };
 };

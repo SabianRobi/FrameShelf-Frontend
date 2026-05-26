@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 // Displays a toast message whenever login or logout succeeded or failed
 export const useAuthToast = () => {
-    const [ searchParams ] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -19,5 +19,5 @@ export const useAuthToast = () => {
         if (login) {
             navigate(globalThis.location.pathname, { replace: true });
         }
-    }, [ searchParams, navigate ]);
+    }, [searchParams, navigate]);
 };
