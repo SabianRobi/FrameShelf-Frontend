@@ -1,4 +1,3 @@
-import deno from "@deno/vite-plugin";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
@@ -12,7 +11,7 @@ export default defineConfig({
   server: {
     port: 3000
   },
-  plugins: [ react(), deno(), tailwindcss() ],
+  plugins: [ react(), tailwindcss() ],
   optimizeDeps: {
     include: [ "react/jsx-runtime" ],
   },

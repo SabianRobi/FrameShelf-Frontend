@@ -28,16 +28,11 @@ jobs:
         with:
           node-version: 22
 
-      - name: Setup Deno
-        uses: denoland/setup-deno@v2
-        with:
-          deno-version: v2.x
-
       - name: Install dependencies
-        run: deno install
+        run: npm ci
 
       - name: Build
-        run: deno task build
+        run: npm run build
 
       - name: Release
         run: npx semantic-release
