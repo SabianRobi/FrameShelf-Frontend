@@ -1,5 +1,1 @@
-export const Lists = () => {
-    return (
-        <div>Lists</div>
-    );
-};
+export const Lists = () => <div>Lists</div>;

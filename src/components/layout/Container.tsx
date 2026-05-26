@@ -1,9 +1,5 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
-export const Container = ({ children }: { children: ReactNode }) => {
-    return (
-        <div className="max-w-[1200px] mx-auto">
-            {children}
-        </div>
-    )
-}
+export const Container = ({ children }: { children: ReactNode }) => (
+    <div className="mx-auto max-w-[1200px]">{children}</div>
+);

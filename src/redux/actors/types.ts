@@ -2,13 +2,13 @@
 //   General
 // ###########
 
-import { PaginableRequest, PaginableResponse, Request } from "../types.ts";
+import type { PaginableRequest, PaginableResponse, Request } from "../types";
 
 export type Actor = {
-  id: number;
-  name: string;
-  birthday: string;
-  profilePath: string | null;
+    id: number;
+    name: string;
+    birthday: string;
+    profilePath: string | null;
 };
 
 // ###########
@@ -20,7 +20,7 @@ export type GetActorByIdRequest = Pick<Actor, "id">;
 export type CreateActorRequest = Pick<Actor, "id">;
 export type DeleteActorRequest = Pick<Actor, "id">;
 export type SearchActorRequest = Pick<PaginableRequest, "page"> & {
-  query: Actor["name"];
+    query: Actor["name"];
 };
 
 // ###########

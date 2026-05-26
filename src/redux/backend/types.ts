@@ -3,15 +3,15 @@
 // ###########
 
 export type BackendInfo = {
-  build: BuildInfo;
+    build: BuildInfo;
 };
 
 type BuildInfo = {
-  artifact: string,
-  name: string,
-  time: string,
-  version: string,
-  group: string;
+    artifact: string;
+    name: string;
+    time: string;
+    version: string;
+    group: string;
 };
 
 // ###########
