@@ -1,11 +1,12 @@
 import { Home } from "./pages/Home";
-import { BrowserRouter, Route, Routes as Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { LoginWithGoogle } from "@/pages/auth/LoginWithGoogle";
 import { Login } from "@/pages/auth/Login";
 import { Profile } from "@/pages/Profile";
 import { Lists } from "@/pages/Lists";
 import { ProtectedRoute } from "@/auth/ProtectedRoute";
+import { Search } from "./pages/Search";
 
 export const FrameShelfRoutes = () => (
     <BrowserRouter>
@@ -25,6 +26,7 @@ export const FrameShelfRoutes = () => (
                             <Route element={<Lists />} path="lists" />
                         </Route>
                     </Route>
+                    <Route element={<Search />} path="search" />
                 </Route>
             </Route>
         </Routes>
