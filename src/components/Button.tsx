@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes, Fragment } from "react";
+import { type ButtonHTMLAttributes } from "react";
 import { FaSpinner } from "react-icons/fa6";
 import { cn } from "@/lib/cn";
 
@@ -18,7 +18,7 @@ export const Button = ({ children, className, isLoading, disabled, type = "butto
     >
         <div className="relative flex items-center justify-center">
             {children}
-            {isLoading ? <FaSpinner className="ml-2 h-6 w-6 animate-spin" /> : <Fragment />}
+            {isLoading && <FaSpinner className="ml-2 h-6 w-6 animate-spin" />}
         </div>
     </button>
 );
