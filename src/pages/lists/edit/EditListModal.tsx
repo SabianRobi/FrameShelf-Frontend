@@ -1,39 +1,41 @@
 import { Modal } from "@/components/Modal";
-import type { CreateListRequest, ListType } from "@/redux/lists/types";
-import type { Dispatch, SetStateAction } from "react";
-import { useForm, FormProvider, type SubmitHandler } from "react-hook-form";
-import { Button } from "@/components/Button";
-import { SelectType } from "./SelectType";
-import { useCreateListMutation } from "@/redux/lists/listApiSlice";
-import { toast } from "react-toastify";
 import { cn } from "@/lib/cn";
-import * as z from "zod";
+import { useEditListMutation } from "@/redux/lists/listApiSlice";
+import type { EditListRequest, List } from "@/redux/lists/types";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { type Dispatch, type SetStateAction } from "react";
+import { FormProvider, useForm, type SubmitHandler } from "react-hook-form";
+import { toast } from "react-toastify";
+import * as z from "zod";
+import { Button } from "@/components/Button";
 
-export type CreateListRequestForm = {
-    name: string;
-    type: ListType;
-};
-
-type CreateListModalProps = {
-    setShowModal: Dispatch<SetStateAction<boolean>>;
+type EditListModalProps = {
     showModal: boolean;
+    setShowModal: Dispatch<SetStateAction<boolean>>;
+    list: List;
+    setList: Dispatch<SetStateAction<List | null>>;
 };
 
-export const CreateListModal = ({ setShowModal, showModal }: CreateListModalProps) => {
-    const [createList] = useCreateListMutation();
+export type EditListRequestForm = {
+    name: string;
+};
 
-    const initialValues: CreateListRequestForm = {
-        name: "",
-        type: "MOVIE"
+export const EditListModal = ({ showModal, setShowModal, list, setList }: EditListModalProps) => {
+    const [editList] = useEditListMutation();
+
+    const initialValues: EditListRequestForm = {
+        name: list.name
     };
 
     const schema = z.object({
-        name: z.string().trim().min(1),
-        type: z.literal(["PERSON", "MOVIE"])
+        name: z.string().trim().min(1)
     });
 
-    const methods = useForm<CreateListRequestForm>({ defaultValues: initialValues, resolver: zodResolver(schema) });
+    const methods = useForm<EditListRequestForm>({
+        defaultValues: initialValues,
+        resolver: zodResolver(schema),
+        resetOptions: { keepValues: false }
+    });
     const {
         register,
         handleSubmit,
@@ -42,23 +44,24 @@ export const CreateListModal = ({ setShowModal, showModal }: CreateListModalProp
     } = methods;
 
     const closeModal = (state: SetStateAction<boolean>) => {
-        setShowModal(state);
         reset();
+        setList(null);
+        setShowModal(state);
     };
 
-    const onSubmit: SubmitHandler<CreateListRequestForm> = data => {
-        const body: CreateListRequest = data;
+    const onSubmit: SubmitHandler<EditListRequestForm> = data => {
+        const body: EditListRequest = { ...data, id: list.id };
 
-        createList(body)
+        editList(body)
             .unwrap()
             .then(() => {
-                toast.success("Successfully created the list!");
+                toast.success("Successfully updated the list!");
                 closeModal(false);
             });
     };
 
     return (
-        <Modal setShowModal={closeModal} showModal={showModal} title="Create List">
+        <Modal setShowModal={closeModal} showModal={showModal} title="Edit List">
             <FormProvider {...methods}>
                 <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
                     <div className="flex flex-col gap-2">
@@ -74,14 +77,10 @@ export const CreateListModal = ({ setShowModal, showModal }: CreateListModalProp
                         {errors.name && <span className="text-danger">This field is required</span>}
                     </div>
 
-                    <div className="flex flex-col gap-2">
-                        <SelectType />
-                    </div>
-
                     <div className="mt-4 flex justify-between">
                         <Button onClick={() => closeModal(false)}>Cancel</Button>
                         <Button className="hover:bg-success hover:text-white" type="submit">
-                            Create
+                            Update
                         </Button>
                     </div>
                 </form>

@@ -1,6 +1,12 @@
 import { restApi } from "@/redux/restApi";
 import { type RootState } from "@/redux/store";
-import type { CreateListRequest, CreateListResponse, GetListsResponse } from "@/redux/lists/types.ts";
+import type {
+    CreateListRequest,
+    CreateListResponse,
+    EditListRequest,
+    EditListResponse,
+    GetListsResponse
+} from "@/redux/lists/types.ts";
 
 export const listApiSlice = restApi.injectEndpoints({
     endpoints: builder => ({
@@ -23,14 +29,14 @@ export const listApiSlice = restApi.injectEndpoints({
                 result ? [...result.content.map(({ id }) => ({ type: "Lists" as const, id })), "Lists"] : ["Lists"]
         }),
         createList: builder.mutation<CreateListResponse, CreateListRequest>({
-            queryFn: async (body, api, _extraOptions, baseQuery) => {
+            queryFn: async (request, api, _extraOptions, baseQuery) => {
                 const state = api.getState() as RootState;
                 const userId = state.user.user!.id;
 
                 const response = await baseQuery({
                     url: `/user/${userId}/lists`,
                     method: "POST",
-                    body
+                    body: request
                 });
 
                 if (response.error) {
@@ -40,8 +46,29 @@ export const listApiSlice = restApi.injectEndpoints({
                 return { data: response.data as CreateListResponse };
             },
             invalidatesTags: ["Lists"]
+        }),
+        editList: builder.mutation<EditListResponse, EditListRequest>({
+            queryFn: async (request, api, _extraOptions, baseQuery) => {
+                const state = api.getState() as RootState;
+                const userId = state.user.user!.id;
+
+                const { id: listId, ...body } = request;
+
+                const response = await baseQuery({
+                    url: `/user/${userId}/lists/${listId}`,
+                    method: "PATCH",
+                    body
+                });
+
+                if (response.error) {
+                    return { error: response.error };
+                }
+
+                return { data: response.data as EditListResponse };
+            },
+            invalidatesTags: result => (result ? ["Lists", { type: "Lists" as const, id: result.id }] : ["Lists"])
         })
     })
 });
 
-export const { useGetListsQuery, useCreateListMutation } = listApiSlice;
+export const { useGetListsQuery, useCreateListMutation, useEditListMutation } = listApiSlice;

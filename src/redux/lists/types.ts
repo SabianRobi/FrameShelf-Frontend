@@ -20,12 +20,13 @@ export type ListType = "PERSON" | "MOVIE";
 // ###########
 
 export type CreateListRequest = Pick<List, "name" | "type">;
-
+export type EditListRequest = Pick<List, "id"> & Partial<Pick<List, "name">>;
 // ###########
 //   Responses
 // ###########
 
 export type GetListsResponse = PageResponse<ListResponse>;
 export type CreateListResponse = ListResponse;
+export type EditListResponse = ListResponse;
 
 export type ListResponse = List;

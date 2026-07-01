@@ -4,9 +4,13 @@ import { Button } from "@/components/Button";
 import { FaPlus } from "react-icons/fa6";
 import { useState } from "react";
 import { CreateListModal } from "./lists/create/CreateListForm";
+import { EditListModal } from "./lists/edit/EditListModal";
+import type { List } from "@/redux/lists/types";
 
 export const Lists = () => {
     const [showCreateListModal, setShowCreateListModal] = useState(false);
+    const [showEditListModal, setShowEditListModal] = useState(false);
+    const [list, setList] = useState<List | null>(null);
 
     const { data: lists } = useGetListsQuery();
 
@@ -20,10 +24,18 @@ export const Lists = () => {
             </Button>
 
             {lists?.content.map(list => (
-                <ListPreview key={list.id} list={list} />
+                <ListPreview key={list.id} list={list} setList={setList} setShowEditListModal={setShowEditListModal} />
             ))}
 
             <CreateListModal setShowModal={setShowCreateListModal} showModal={showCreateListModal} />
+            {list && (
+                <EditListModal
+                    list={list}
+                    setList={setList}
+                    setShowModal={setShowEditListModal}
+                    showModal={showEditListModal}
+                />
+            )}
         </div>
     );
 };
