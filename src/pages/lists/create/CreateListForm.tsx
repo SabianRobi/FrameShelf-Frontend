@@ -52,7 +52,7 @@ export const CreateListModal = ({ setShowModal, showModal }: CreateListModalProp
         createList(body)
             .unwrap()
             .then(() => {
-                toast.success("List created successfully");
+                toast.success("Successfully created the list!");
                 closeModal(false);
             });
     };
