@@ -21,7 +21,7 @@ export type EditListRequestForm = {
 };
 
 export const EditListModal = ({ showModal, setShowModal, list, setList }: EditListModalProps) => {
-    const [editList] = useEditListMutation();
+    const [editList, { isLoading }] = useEditListMutation();
 
     const initialValues: EditListRequestForm = {
         name: list.name
@@ -79,7 +79,12 @@ export const EditListModal = ({ showModal, setShowModal, list, setList }: EditLi
 
                     <div className="mt-4 flex justify-between">
                         <Button onClick={() => closeModal(false)}>Cancel</Button>
-                        <Button className="hover:bg-success hover:text-white" type="submit">
+                        <Button
+                            className="hover:bg-success hover:text-white"
+                            disabled={isLoading}
+                            isLoading={isLoading}
+                            type="submit"
+                        >
                             Update
                         </Button>
                     </div>

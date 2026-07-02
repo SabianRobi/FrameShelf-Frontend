@@ -21,7 +21,7 @@ type CreateListModalProps = {
 };
 
 export const CreateListModal = ({ setShowModal, showModal }: CreateListModalProps) => {
-    const [createList] = useCreateListMutation();
+    const [createList, { isLoading }] = useCreateListMutation();
 
     const initialValues: CreateListRequestForm = {
         name: "",
@@ -80,7 +80,12 @@ export const CreateListModal = ({ setShowModal, showModal }: CreateListModalProp
 
                     <div className="mt-4 flex justify-between">
                         <Button onClick={() => closeModal(false)}>Cancel</Button>
-                        <Button className="hover:bg-success hover:text-white" type="submit">
+                        <Button
+                            className="hover:bg-success hover:text-white"
+                            disabled={isLoading}
+                            isLoading={isLoading}
+                            type="submit"
+                        >
                             Create
                         </Button>
                     </div>
