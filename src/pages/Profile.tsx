@@ -23,7 +23,10 @@ export const Profile = () => {
 
             <ProfileTable />
 
-            <Button className="hover:bg-danger hover:text-foreground" onClick={() => setConfirmDeleteModalOpen(true)}>
+            <Button
+                className="hover:bg-danger text-danger hover:text-foreground"
+                onClick={() => setConfirmDeleteModalOpen(true)}
+            >
                 Delete account
             </Button>
 

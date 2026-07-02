@@ -51,7 +51,7 @@ export const ProfileMenu = () => {
             </button>
 
             {isProfileMenuOpen && (
-                <div className="bg-surface absolute top-10 right-0 w-32 text-center shadow-lg">
+                <div className="bg-surface absolute top-10 right-0 z-1 w-32 text-center shadow-lg">
                     <ProfileMenuItem setProfileMenuOpen={setProfileMenuOpen} to={`/users/${userId}`}>
                         My Profile
                     </ProfileMenuItem>

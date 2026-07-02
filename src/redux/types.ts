@@ -2,49 +2,30 @@
 //   Requests
 // ###########
 
-export type Request<T> = PaginableRequest & SortableRequest<T>;
+// Export type Request<T> = PaginableRequest & SortableRequest<T>;
 
-export type PaginableRequest = Partial<{
-    page: number;
-    pageSize: number;
-}>;
+// Export type PaginableRequest = Partial<{
+//   Page: number;
+//   PageSize: number;
+// }>;
 
-export type SortableRequest<T> = {
-    sort?: Array<{
-        field: keyof T;
-        direction: "asc" | "desc";
-    }>;
-};
+// Export type SortableRequest<T> = {
+//   Sort?: Array<{
+//     Field: keyof T;
+//     Direction: "asc" | "desc";
+//   }>;
+// };
 
 // ###########
 //   Responses
 // ###########
 
-export type PaginableResponse<T> = {
+export type PageResponse<T> = {
     content: T[];
-    pageable: {
-        pageNumber: number;
-        pageSize: number;
-        sort: {
-            empty: boolean;
-            sorted: boolean;
-            unsorted: boolean;
-        };
-        offset: number;
-        paged: boolean;
-        unpaged: boolean;
+    page: {
+        size: number;
+        number: number;
+        totalElements: number;
+        totalPages: number;
     };
-    last: boolean;
-    totalPages: number;
-    totalElements: number;
-    size: number;
-    number: number;
-    sort: {
-        empty: boolean;
-        sorted: boolean;
-        unsorted: boolean;
-    };
-    first: boolean;
-    numberOfElements: number;
-    empty: boolean;
 };
