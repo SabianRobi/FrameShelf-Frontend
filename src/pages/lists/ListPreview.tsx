@@ -1,27 +1,46 @@
 import { type List } from "@/redux/lists/types";
-import { FaPencil } from "react-icons/fa6";
+import { FaPencil, FaTrash } from "react-icons/fa6";
 import { Button } from "@/components/Button";
 import type { Dispatch, SetStateAction } from "react";
 
 type ListPreviewProps = {
     list: List;
     setShowEditListModal: Dispatch<SetStateAction<boolean>>;
-    setList: Dispatch<SetStateAction<List | null>>;
+    setListToEdit: Dispatch<SetStateAction<List | null>>;
+    setShowDeleteListModal: Dispatch<SetStateAction<boolean>>;
+    setListToDelete: Dispatch<SetStateAction<List | null>>;
 };
 
-export const ListPreview = ({ list, setShowEditListModal, setList }: ListPreviewProps) => (
+export const ListPreview = ({
+    list,
+    setShowEditListModal,
+    setListToEdit,
+    setShowDeleteListModal,
+    setListToDelete
+}: ListPreviewProps) => (
     <div className="bg-surface rounded-xl p-2">
         <div className="flex items-center justify-between">
             <p className="text-xl">{list.name}</p>
-            <Button
-                className="hover:background-warning! text-warning hover:text-background!"
-                onClick={() => {
-                    setList(list);
-                    setShowEditListModal(true);
-                }}
-            >
-                <FaPencil />
-            </Button>
+            <div className="flex gap-2">
+                <Button
+                    className="text-danger hover:bg-danger hover:text-foreground"
+                    onClick={() => {
+                        setListToDelete(list);
+                        setShowDeleteListModal(true);
+                    }}
+                >
+                    <FaTrash />
+                </Button>
+                <Button
+                    className="hover:background-warning! text-warning hover:text-background!"
+                    onClick={() => {
+                        setListToEdit(list);
+                        setShowEditListModal(true);
+                    }}
+                >
+                    <FaPencil />
+                </Button>
+            </div>
         </div>
 
         {/* Placeholder items */}

@@ -3,6 +3,8 @@ import { type RootState } from "@/redux/store";
 import type {
     CreateListRequest,
     CreateListResponse,
+    DeleteListRequest,
+    DeleteListResponse,
     EditListRequest,
     EditListResponse,
     GetListsResponse
@@ -51,7 +53,6 @@ export const listApiSlice = restApi.injectEndpoints({
             queryFn: async (request, api, _extraOptions, baseQuery) => {
                 const state = api.getState() as RootState;
                 const userId = state.user.user!.id;
-
                 const { id: listId, ...body } = request;
 
                 const response = await baseQuery({
@@ -67,8 +68,27 @@ export const listApiSlice = restApi.injectEndpoints({
                 return { data: response.data as EditListResponse };
             },
             invalidatesTags: result => (result ? ["Lists", { type: "Lists" as const, id: result.id }] : ["Lists"])
+        }),
+        deleteList: builder.mutation<DeleteListResponse, DeleteListRequest>({
+            queryFn: async (request, api, _extraOptions, baseQuery) => {
+                const state = api.getState() as RootState;
+                const userId = state.user.user!.id;
+                const { id: listId } = request;
+
+                const response = await baseQuery({
+                    url: `/user/${userId}/lists/${listId}`,
+                    method: "DELETE"
+                });
+
+                if (response.error) {
+                    return { error: response.error };
+                }
+
+                return { data: undefined };
+            },
+            invalidatesTags: ["Lists"]
         })
     })
 });
 
-export const { useGetListsQuery, useCreateListMutation, useEditListMutation } = listApiSlice;
+export const { useGetListsQuery, useCreateListMutation, useEditListMutation, useDeleteListMutation } = listApiSlice;

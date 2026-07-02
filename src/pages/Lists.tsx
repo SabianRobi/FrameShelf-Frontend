@@ -6,11 +6,14 @@ import { useState } from "react";
 import { CreateListModal } from "./lists/create/CreateListForm";
 import { EditListModal } from "./lists/edit/EditListModal";
 import type { List } from "@/redux/lists/types";
+import { DeleteListModal } from "./lists/delete/DeleteListModal";
 
 export const Lists = () => {
     const [showCreateListModal, setShowCreateListModal] = useState(false);
     const [showEditListModal, setShowEditListModal] = useState(false);
-    const [list, setList] = useState<List | null>(null);
+    const [showDeleteListModal, setShowDeleteListModal] = useState(false);
+    const [listToEdit, setListToEdit] = useState<List | null>(null);
+    const [listToDelete, setListToDelete] = useState<List | null>(null);
 
     const { data: lists } = useGetListsQuery();
 
@@ -24,16 +27,31 @@ export const Lists = () => {
             </Button>
 
             {lists?.content.map(list => (
-                <ListPreview key={list.id} list={list} setList={setList} setShowEditListModal={setShowEditListModal} />
+                <ListPreview
+                    key={list.id}
+                    list={list}
+                    setListToDelete={setListToDelete}
+                    setListToEdit={setListToEdit}
+                    setShowDeleteListModal={setShowDeleteListModal}
+                    setShowEditListModal={setShowEditListModal}
+                />
             ))}
 
             <CreateListModal setShowModal={setShowCreateListModal} showModal={showCreateListModal} />
-            {list && (
+            {listToEdit && (
                 <EditListModal
-                    list={list}
-                    setList={setList}
+                    list={listToEdit}
+                    setList={setListToEdit}
                     setShowModal={setShowEditListModal}
                     showModal={showEditListModal}
+                />
+            )}
+            {listToDelete && (
+                <DeleteListModal
+                    list={listToDelete}
+                    setList={setListToDelete}
+                    setShowModal={setShowDeleteListModal}
+                    showModal={showDeleteListModal}
                 />
             )}
         </div>
