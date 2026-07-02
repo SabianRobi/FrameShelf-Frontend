@@ -1,3 +1,19 @@
+# [0.1.0](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.20...v0.1.0) (2026-07-02)
+
+
+### Bug Fixes
+
+* **lists:** Improved UX ([38cb427](https://github.com/SabianRobi/FrameShelf-Frontend/commit/38cb4270dd9b110833cbd1b704934cf021be2372))
+* **profile:** Elevated the profile menu ([6acbcbd](https://github.com/SabianRobi/FrameShelf-Frontend/commit/6acbcbd7c43c1add023d41597233aae54b688775))
+
+
+### Features
+
+* Added delete list feature ([1f95819](https://github.com/SabianRobi/FrameShelf-Frontend/commit/1f9581912bda0bc408615c7af095ccd5e9819474))
+* **lists:** Added create list feature ([bc6d34c](https://github.com/SabianRobi/FrameShelf-Frontend/commit/bc6d34c410bcd6e98e6fdfaa190beee0f442e41b))
+* **lists:** Added edit list feature ([d7b8eb4](https://github.com/SabianRobi/FrameShelf-Frontend/commit/d7b8eb4d1e7748224309fabc743ce6d5bc0a58f1))
+* **lists:** Added lists page, displayed lists ([9330267](https://github.com/SabianRobi/FrameShelf-Frontend/commit/93302675598947103c60e7fcd41005bed801b5c2))
+
 ## [0.0.20](https://github.com/SabianRobi/FrameShelf-Frontend/compare/v0.0.19...v0.0.20) (2026-05-26)
 
 
